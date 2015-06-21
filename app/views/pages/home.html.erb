@@ -5,15 +5,37 @@
 <!-- else -->
 
 <div class="container well">
-  <h1>Hello!</h1>
-  <h4>Happy to have you here</h4>
-  <a href="/surveys/new" class="btn btn-primary">Create a survey</a>
+  <% if current_user %>
+    <h1>Hello <%= current_user.username %>!</h1>
+    <h4>Happy to have you here</h4>
+    <a href="/surveys/new" class="btn btn-primary">Create a survey</a>
+  <% else %>
+    <h1>Welcome to Gorilla Survey!</h1>
+    <h4>Please sign in / sign up</h4>
+    <%= link_to 'sign up', signup_path, class: 'btn btn-primary btn-lg' %>
+  <% end %>
+
 </div>
 
 <div class="container">
-  <div class="col-md-8">
-  </div>
-
-  <div >
-  </div>
+  <% if current_user %>
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr class="action">
+          <td>My surveys:</td>
+          <td>Created: </td>
+          <td>Submissions: </td>
+        </tr>
+      </thead>
+      <tbody>
+        <% current_user.surveys.each do |survey| %>
+          <tr>
+            <th> <%= link_to survey.title, survey_display_path(survey) %> </th>
+            <th class="content"> <%= time_ago_in_words(survey.created_at)%> ago</th>
+            <th class="content"> <%= survey.submissions.count %></th>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 </div>

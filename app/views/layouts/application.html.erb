@@ -18,6 +18,7 @@
       <%= link_to 'Logout', logout_path, method: :delete, class: 'navbar-brand' %>
       <p class="pull-right avatar">Logged in as <%= current_user.username %><span class="glyphicon glyphicon-user "></span></p>
     <%end%>
+    <p class="notice"></p>
   </nav>
 
 <%= yield %>

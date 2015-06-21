@@ -1,6 +1,7 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$action-color: #477DCA;
 .glyphicon-user {
   font-size: 2em;
   margin: auto;
@@ -12,5 +13,9 @@
 .navbar {
   padding: 1em;
   background: black;
+  color: white;
+}
+.action {
+  background: $action-color;
   color: white;
 }
