@@ -1,0 +1,25 @@
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object img-circle" src="http://lorempixel.com/124/125/cats/5/cc" alt="profile picture">
+    </a>
+  </div>
+  <div class="media-body"><br><br>
+    <h2 class="media-heading">Hi, <%= @user.username %>...</h2>
+    <h3>You've been busy!</h3>
+  </div>
+  <ul class="list-group">
+  <li class="list-group-item">
+    <span class="badge"><%= @user.surveys.count%></span>
+    <h4>Survey's sent</h4>
+  </li>
+  <li class="list-group-item">
+    <span class="badge"><%= total_questions %></span>
+    <h4>Questions asked</h4>
+  </li>
+  <li class="list-group-item">
+    <span class="badge"><%= total_submissions %></span>
+    <h4>Submissions recieved</h4>
+  </li>
+</ul>
+</div>

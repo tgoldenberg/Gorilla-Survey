@@ -1,0 +1,36 @@
+// Place all the styles related to the surveys controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$action-color: #477DCA;
+.form-control.input-field {
+  width: 70%;
+  margin-right: 5em;
+}
+.form-group {
+  padding-left: 3em;
+}
+.form-label {
+  margin-left: 1em;
+}
+.flex {
+  display: flex;
+}
+.glyphicon-plus {
+  font-size: 3em;
+  margin: 0;
+  margin-top: -.2em;
+  background: $action-color;
+  color: white;
+  padding: 2px;
+  padding-right: 0px;
+  padding-left: 5px;
+  line-height: .9;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px #333;
+}
+.form-letter {
+  background: $action-color;
+  color: white;
+  font-size: 1.2em;
+  width: 3em;
+}

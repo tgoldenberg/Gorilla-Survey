@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="well">
+    <h1>Create a new survey!</h1>
+  </div>
+  <%= form_tag('/surveys', method: 'post', class: 'form-horizontal') do  %>
+    <div class="form-group">
+      <p class="form-label">Title: </p>
+      <%= text_field_tag :title, "", class: 'form-control input-field' %><br/>
+    </div>
+    <p class="form-label">Your survey question: </p>
+    <div class="form-group flex">
+      <%= text_field_tag :question_prompt, "", class: 'form-control input-field' %>
+      <a href="#"><span class="glyphicon glyphicon-plus"></span></a>
+    </div>
+    <div class="hidden-fields hidden">
+      <table class="table table-striped table-bordered">
+        <tr>
+          <th class="form-letter"> A </th>
+          <th><%= text_field_tag :possible_answer, "", class: 'form-control input-field', placeholder: 'answer 1' %></th>
+        </tr>
+        <tr>
+          <th class="form-letter"> B </th>
+          <th><%= text_field_tag :possible_answer, "", class: 'form-control input-field', placeholder: 'answer 1' %></th>
+        </tr>
+        <tr>
+          <th class="form-letter"> C </th>
+          <th><%= text_field_tag :possible_answer, "", class: 'form-control input-field', placeholder: 'answer 1' %></th>
+        </tr>
+      </table>
+
+    </div>
+  <% end %>
+</div>

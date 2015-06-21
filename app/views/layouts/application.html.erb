@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MadGorillaz</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+
+  <nav class="navbar navbar nav">
+    <%= link_to 'Home', root_path, class: "navbar-brand"%>
+    <% if !session[:user_id] %>
+      <%= link_to 'Login', login_path, class: "navbar-brand"%>
+      <%= link_to 'Signup', signup_path, class: "navbar-brand"%>
+    <% else %>
+      <%= link_to 'Logout', logout_path, method: :delete, class: 'navbar-brand' %>
+      <p class="pull-right avatar">Logged in as <%= current_user.username %><span class="glyphicon glyphicon-user "></span></p>
+    <%end%>
+  </nav>
+
+<%= yield %>
+
+</body>
+</html>
