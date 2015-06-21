@@ -14,6 +14,11 @@ gem 'bcrypt'
 gem 'react-rails'
 gem 'responders', '~> 2.0'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-react-d3-components'
+  gem 'rails-assets-react-d3'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'

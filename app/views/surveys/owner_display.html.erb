@@ -1,2 +1,28 @@
-<h1>Surveys#owner_display</h1>
-<p>Find me in app/views/surveys/owner_display.html.erb</p>
+<div class="container">
+  <div class="well">
+    <p>Survey by: <%= @survey.user.username %></p>
+    <h1><%= @survey.title %></h1>
+  </div>
+
+  <p> <a href="/surveys/<%= @survey.id %>">Survey url: </a> "http://localhost:3000/surveys/ <%= @survey.id %>"</p>
+  <h1>Results: </h1>
+  <% @questions.each_with_index do |question, idx| %>
+    <p>Question <%= idx + 1 %>: </p>
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr class="action">
+          <td> <%= question.prompt %></td>
+          <td> Number of votes:</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% question.possible_answers.each do |poss_answer| %>
+          <tr>
+            <th class="answer-content"> <%= poss_answer.content %></th>
+            <th class="count"> <%= poss_answer.count  %></th>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

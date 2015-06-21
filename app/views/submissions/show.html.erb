@@ -1,0 +1,13 @@
+<div class="container well">
+  <% if current_user %>
+    <p>Submission successfully submitted!</p>
+    <h1>Hello <%= current_user.username %>!</h1>
+  <% else %>
+    <h1>Welcome to Gorilla Survey!</h1>
+  <% end %>
+  <h4>Happy to have you here</h4>
+  <div class="flex">
+    <a href="/surveys/new" class="btn btn-primary">Create a survey</a>
+    <button class="btn btn-success btn-lg"><%= link_to 'Home', root_path, style: "color: white;" %></button>
+  </div>
+</div>
