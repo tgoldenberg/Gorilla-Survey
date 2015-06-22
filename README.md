@@ -22,3 +22,12 @@ Survey Monkey clone with ReactJS for dynamic form building
 `surveys#show`
 ![screenshot](https://raw.githubusercontent.com/tgoldenberg/survey-monkey-with-React/master/gorilla-survey.png)
 ****
+
+# Getting started 
+#### To use the project, just do the following: 
+  - clone the repository
+  -  `rake db:create`
+  -  `rake db:migrate`
+  -  `rails g react:install`
+  -  `rails s`
+  -  Enjoy!
