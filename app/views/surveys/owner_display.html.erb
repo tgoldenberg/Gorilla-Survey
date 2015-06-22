@@ -24,5 +24,6 @@
         <% end %>
       </tbody>
     </table>
+    <%= react_component("Graph", {question: question.prompt, answer1: {content: question.possible_answers.first.content, count: question.possible_answers.first.count}, answer2: {content: question.possible_answers[1].content, count: question.possible_answers[1].count }, answer3: {content: question.possible_answers.last.content, count: question.possible_answers.last.count }}) %>
   <% end %>
 </div>
