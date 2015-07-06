@@ -27,4 +27,5 @@ group :development, :test do
   gem 'launchy'
   gem 'spring'
   gem 'better_errors'
+  gem 'selenium-webdriver'
 end
