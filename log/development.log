@@ -34413,3 +34413,555 @@ Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476
 
 
 Started GET "/assets/application.self-16c207b3ca1b52afcfc7f4b662487caf1bbe084a6656bb15f693ab9de2d11be7.js?body=1" for ::1 at 2015-06-21 23:38:33 -0400
+  [1m[36m (34.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150619204456)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (34.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150619204456"]]
+  [1m[36m (30.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSurveys (20150619204520)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (3.8ms)[0m  [1mCREATE TABLE "surveys" ("id" serial primary key, "user_id" integer, "title" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE  INDEX  "index_surveys_on_user_id" ON "surveys"  ("user_id")
+  [1m[36m (2.8ms)[0m  [1mALTER TABLE "surveys" ADD CONSTRAINT "fk_rails_2a50b6eb90"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150619204520"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateQuestions (20150619204558)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "questions" ("id" serial primary key, "survey_id" integer, "prompt" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  CREATE  INDEX  "index_questions_on_survey_id" ON "questions"  ("survey_id")
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "questions" ADD CONSTRAINT "fk_rails_15f8f0ec98"
+FOREIGN KEY ("survey_id")
+  REFERENCES "surveys" ("id")
+[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150619204558"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePossibleAnswers (20150619204638)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "possible_answers" ("id" serial primary key, "question_id" integer, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE  INDEX  "index_possible_answers_on_question_id" ON "possible_answers"  ("question_id")
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "possible_answers" ADD CONSTRAINT "fk_rails_f255fee41e"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150619204638"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSubmissions (20150619204701)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "submissions" ("id" serial primary key, "survey_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX  "index_submissions_on_survey_id" ON "submissions"  ("survey_id")
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "submissions" ADD CONSTRAINT "fk_rails_28d4b65b46"
+FOREIGN KEY ("survey_id")
+  REFERENCES "surveys" ("id")
+[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150619204701"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUserAnswers (20150619204734)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "user_answers" ("id" serial primary key, "submission_id" integer, "question_id" integer, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE  INDEX  "index_user_answers_on_submission_id" ON "user_answers"  ("submission_id")
+  [1m[36m (0.7ms)[0m  [1mCREATE  INDEX  "index_user_answers_on_question_id" ON "user_answers"  ("question_id")[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "user_answers" ADD CONSTRAINT "fk_rails_7d411fead9"
+FOREIGN KEY ("submission_id")
+  REFERENCES "submissions" ("id")
+
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "user_answers" ADD CONSTRAINT "fk_rails_2ca800576a"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150619204734"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to AddCountToPossibleAnswers (20150621024146)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "possible_answers" ADD "count" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150621024146"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'possible_answers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'questions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'submissions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'surveys'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'user_answers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/" for ::1 at 2015-07-06 10:30:31 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 1941ms (Views: 1917.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-06 10:30:33 -0400
+
+
+Started GET "/assets/pages.self-8cb7d95ffe49582bd7c0846cfa29b3e726b986bbc6192cfec3c5fb790590ecea.css?body=1" for ::1 at 2015-07-06 10:30:33 -0400
+
+
+Started GET "/assets/surveys.self-18c92eff66a64016242744741b22a12384d1b7b1d5dbd24bf3c9dbf078cec174.css?body=1" for ::1 at 2015-07-06 10:30:33 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-06 10:30:33 -0400
+
+
+Started GET "/assets/application.self-1454e659efb097ae5eee73de8b7b8bcbd674c5fa63e9cf1015d77cad4a0b7e4d.css?body=1" for ::1 at 2015-07-06 10:30:33 -0400
+
+
+Started GET "/assets/_variables.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/react.self-93bc62cb6c7b74ee7e5a2fcf623f3abbd365440bf90eba740c625f159078aa82.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/d3/d3.self-da224bd5c230114c27a4c351e7c2a549c05864b71ebf058fa194f69a6457dd84.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/d3.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/react-d3.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/react-d3/react-d3.min.self-18e0715d413ea22876d23296b89f83360d3f94757e0238bc3531b9fe8d00e7f8.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/react-d3-components/react-d3-components.self-2e57c9c7175aeaf28d0e8d83feacdd12929f822f736f29fce55e6dcdb737cebe.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/react-d3-components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/components/FormBox.self-f3dd116bbc421906652cd087bbab8a63d68cf407d484c6c7b829b1bffc3d0870.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/components/Graph.self-ce6334ee90854c74d97e2bd8b37ca1287c83c5b5a7d28017553efd3418880faf.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/components/PossibleAnswer.self-b44f3d970167f6e0318b7d515146e8bffebe3fabcecb36571efd6b06f332402e.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/components/Question.self-a995ba0f6be94fd0ce3f11a3f2bccfda0f128c3f0e683ceeea06e12de765b948.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/components/QuestionForm.self-4dc9a733397330da3a0d8be348ba58e18be6a6fe333de7955886b2efbe3f0c12.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/components/RenderedQuestion.self-7c435f7d40930d762d33762a08dcb7f13a74b965c31964eb7ae8177d1025ebd2.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/components/SubmissionBox.self-4fcc9c935e8353b079526047068ab8446a0d4d4202990b6804f72e7593e4fec5.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/pages.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/surveys.self-7b1033d596547356407be77f2d67a84de7190d80b94fb029da8134ce3986e3ac.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/assets/application.self-16c207b3ca1b52afcfc7f4b662487caf1bbe084a6656bb15f693ab9de2d11be7.js?body=1" for ::1 at 2015-07-06 10:30:34 -0400
+
+
+Started GET "/signup" for ::1 at 2015-07-06 10:30:38 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (70.2ms)
+Completed 200 OK in 180ms (Views: 179.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-07-06 10:30:55 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4NLvpMSW3CdRjMOqz2eLv7suD71GIRFU8UDsvI6yu8wKhTwKtDfv5GpPs66xKmVevnQbyo6auCttSRuHnwTMWQ==", "user"=>{"username"=>"mike@example.com", "password"=>"[FILTERED]"}, "commit"=>"Sign-Up"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "mike@example.com"], ["password_digest", "$2a$10$PKTBjlDFoKMryidHfZGkGu3RiZClMccbMAkyLlRyxyLN1c9KvVQse"], ["created_at", "2015-07-06 14:30:55.906741"], ["updated_at", "2015-07-06 14:30:55.906741"]]
+  [1m[35m (15.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 101ms (ActiveRecord: 16.7ms)
+
+
+Started GET "/" for ::1 at 2015-07-06 10:30:55 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSurvey Load (0.3ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (144.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 256ms (Views: 254.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/surveys/new" for ::1 at 2015-07-06 10:31:02 -0400
+Processing by SurveysController#new as HTML
+  Rendered surveys/new.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 213ms (Views: 189.1ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/surveys" for ::1 at 2015-07-06 10:34:40 -0400
+Processing by SurveysController#create as JSON
+  Parameters: {"title"=>"Best baseball player", "questions"=>{"0"=>{"data"=>{"question"=>"Who is the best?", "answer1"=>"A-Rod", "answer2"=>"Lou Gehrig", "answer3"=>"Joe Dimaggio"}}, "1"=>{"data"=>{"question"=>"What is the best team?", "answer1"=>"Yankees", "answer2"=>"Mets", "answer3"=>"Brooklyn Dodgers"}}, "2"=>{"data"=>{"question"=>"What is the best baseball movie?", "answer1"=>"Field of Dreams", "answer2"=>"A league of their own", "answer3"=>"Benchwarmers"}}}}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "surveys" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Best baseball player"], ["user_id", 1], ["created_at", "2015-07-06 14:34:40.558307"], ["updated_at", "2015-07-06 14:34:40.558307"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "questions" ("prompt", "survey_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["prompt", "Who is the best?"], ["survey_id", 1], ["created_at", "2015-07-06 14:34:40.561788"], ["updated_at", "2015-07-06 14:34:40.561788"]]
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "possible_answers" ("content", "question_id", "created_at", "updated_at", "count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "A-Rod"], ["question_id", 1], ["created_at", "2015-07-06 14:34:40.612913"], ["updated_at", "2015-07-06 14:34:40.612913"], ["count", 0]]
+  [1m[35m (15.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "possible_answers" ("content", "question_id", "created_at", "updated_at", "count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["content", "Lou Gehrig"], ["question_id", 1], ["created_at", "2015-07-06 14:34:40.633375"], ["updated_at", "2015-07-06 14:34:40.633375"], ["count", 0]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "possible_answers" ("content", "question_id", "created_at", "updated_at", "count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Joe Dimaggio"], ["question_id", 1], ["created_at", "2015-07-06 14:34:40.636679"], ["updated_at", "2015-07-06 14:34:40.636679"], ["count", 0]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "questions" ("prompt", "survey_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["prompt", "What is the best team?"], ["survey_id", 1], ["created_at", "2015-07-06 14:34:40.639610"], ["updated_at", "2015-07-06 14:34:40.639610"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "possible_answers" ("content", "question_id", "created_at", "updated_at", "count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Yankees"], ["question_id", 2], ["created_at", "2015-07-06 14:34:40.642873"], ["updated_at", "2015-07-06 14:34:40.642873"], ["count", 0]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "possible_answers" ("content", "question_id", "created_at", "updated_at", "count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["content", "Mets"], ["question_id", 2], ["created_at", "2015-07-06 14:34:40.645648"], ["updated_at", "2015-07-06 14:34:40.645648"], ["count", 0]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "possible_answers" ("content", "question_id", "created_at", "updated_at", "count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Brooklyn Dodgers"], ["question_id", 2], ["created_at", "2015-07-06 14:34:40.648210"], ["updated_at", "2015-07-06 14:34:40.648210"], ["count", 0]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "questions" ("prompt", "survey_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["prompt", "What is the best baseball movie?"], ["survey_id", 1], ["created_at", "2015-07-06 14:34:40.650640"], ["updated_at", "2015-07-06 14:34:40.650640"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "possible_answers" ("content", "question_id", "created_at", "updated_at", "count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Field of Dreams"], ["question_id", 3], ["created_at", "2015-07-06 14:34:40.653544"], ["updated_at", "2015-07-06 14:34:40.653544"], ["count", 0]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "possible_answers" ("content", "question_id", "created_at", "updated_at", "count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["content", "A league of their own"], ["question_id", 3], ["created_at", "2015-07-06 14:34:40.656040"], ["updated_at", "2015-07-06 14:34:40.656040"], ["count", 0]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "possible_answers" ("content", "question_id", "created_at", "updated_at", "count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Benchwarmers"], ["question_id", 3], ["created_at", "2015-07-06 14:34:40.658465"], ["updated_at", "2015-07-06 14:34:40.658465"], ["count", 0]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 1]]
+Completed 200 OK in 108ms (Views: 0.2ms | ActiveRecord: 29.1ms)
+
+
+Started GET "/surveys/1" for ::1 at 2015-07-06 10:34:40 -0400
+Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPossibleAnswer Load (0.3ms)[0m  [1mSELECT "possible_answers".* FROM "possible_answers" WHERE "possible_answers"."question_id" = $1[0m  [["question_id", 1]]
+  [1m[35mPossibleAnswer Load (0.2ms)[0m  SELECT "possible_answers".* FROM "possible_answers" WHERE "possible_answers"."question_id" = $1  [["question_id", 2]]
+  [1m[36mPossibleAnswer Load (0.2ms)[0m  [1mSELECT "possible_answers".* FROM "possible_answers" WHERE "possible_answers"."question_id" = $1[0m  [["question_id", 3]]
+  Rendered surveys/show.html.erb within layouts/application (6.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 228ms (Views: 207.2ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/submissions" for ::1 at 2015-07-06 10:34:55 -0400
+Processing by SubmissionsController#create as JSON
+  Parameters: {"answerIDs"=>["2", "6", "7"], "surveyId"=>"1"}
+  [1m[36mPossibleAnswer Load (0.2ms)[0m  [1mSELECT  "possible_answers".* FROM "possible_answers" WHERE "possible_answers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "possible_answers" SET "count" = $1, "updated_at" = $2 WHERE "possible_answers"."id" = $3[0m  [["count", 1], ["updated_at", "2015-07-06 14:34:55.063460"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mPossibleAnswer Load (0.2ms)[0m  [1mSELECT  "possible_answers".* FROM "possible_answers" WHERE "possible_answers"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "possible_answers" SET "count" = $1, "updated_at" = $2 WHERE "possible_answers"."id" = $3[0m  [["count", 1], ["updated_at", "2015-07-06 14:34:55.067445"], ["id", 6]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mPossibleAnswer Load (0.3ms)[0m  [1mSELECT  "possible_answers".* FROM "possible_answers" WHERE "possible_answers"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "possible_answers" SET "count" = $1, "updated_at" = $2 WHERE "possible_answers"."id" = $3[0m  [["count", 1], ["updated_at", "2015-07-06 14:34:55.070714"], ["id", 7]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36mSurvey Load (0.3ms)[0m  [1mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "submissions" ("survey_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["survey_id", 1], ["created_at", "2015-07-06 14:34:55.075366"], ["updated_at", "2015-07-06 14:34:55.075366"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/submissions/1" for ::1 at 2015-07-06 10:34:55 -0400
+Processing by SubmissionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubmission Load (0.2ms)[0m  [1mSELECT  "submissions".* FROM "submissions" WHERE "submissions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered submissions/show.html.erb within layouts/application (2.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 111ms (Views: 109.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-07-06 10:34:59 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSurvey Load (0.4ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "submissions" WHERE "submissions"."survey_id" = $1  [["survey_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (58.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 264ms (Views: 262.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/surveys/1/owner_display" for ::1 at 2015-07-06 10:35:01 -0400
+Processing by SurveysController#owner_display as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1  [["survey_id", 1]]
+  [1m[36mPossibleAnswer Load (0.2ms)[0m  [1mSELECT "possible_answers".* FROM "possible_answers" WHERE "possible_answers"."question_id" = $1[0m  [["question_id", 1]]
+  [1m[35mPossibleAnswer Load (0.3ms)[0m  SELECT "possible_answers".* FROM "possible_answers" WHERE "possible_answers"."question_id" = $1  [["question_id", 2]]
+  [1m[36mPossibleAnswer Load (0.2ms)[0m  [1mSELECT "possible_answers".* FROM "possible_answers" WHERE "possible_answers"."question_id" = $1[0m  [["question_id", 3]]
+  Rendered surveys/owner_display.html.erb within layouts/application (8.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 127ms (Views: 123.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/surveys/1" for ::1 at 2015-07-06 10:35:03 -0400
+Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSurvey Load (0.4ms)[0m  [1mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1  [["survey_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPossibleAnswer Load (0.2ms)[0m  SELECT "possible_answers".* FROM "possible_answers" WHERE "possible_answers"."question_id" = $1  [["question_id", 1]]
+  [1m[36mPossibleAnswer Load (0.3ms)[0m  [1mSELECT "possible_answers".* FROM "possible_answers" WHERE "possible_answers"."question_id" = $1[0m  [["question_id", 2]]
+  [1m[35mPossibleAnswer Load (0.3ms)[0m  SELECT "possible_answers".* FROM "possible_answers" WHERE "possible_answers"."question_id" = $1  [["question_id", 3]]
+  Rendered surveys/show.html.erb within layouts/application (6.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 206ms (Views: 197.5ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/submissions" for ::1 at 2015-07-06 10:35:12 -0400
+Processing by SubmissionsController#create as JSON
+  Parameters: {"answerIDs"=>["3", "4", "7"], "surveyId"=>"1"}
+  [1m[35mPossibleAnswer Load (0.3ms)[0m  SELECT  "possible_answers".* FROM "possible_answers" WHERE "possible_answers"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "possible_answers" SET "count" = $1, "updated_at" = $2 WHERE "possible_answers"."id" = $3  [["count", 1], ["updated_at", "2015-07-06 14:35:12.978310"], ["id", 3]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mPossibleAnswer Load (0.2ms)[0m  SELECT  "possible_answers".* FROM "possible_answers" WHERE "possible_answers"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "possible_answers" SET "count" = $1, "updated_at" = $2 WHERE "possible_answers"."id" = $3  [["count", 1], ["updated_at", "2015-07-06 14:35:12.982452"], ["id", 4]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mPossibleAnswer Load (0.3ms)[0m  SELECT  "possible_answers".* FROM "possible_answers" WHERE "possible_answers"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "possible_answers" SET "count" = $1, "updated_at" = $2 WHERE "possible_answers"."id" = $3  [["count", 2], ["updated_at", "2015-07-06 14:35:12.985390"], ["id", 7]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "submissions" ("survey_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["survey_id", 1], ["created_at", "2015-07-06 14:35:12.990112"], ["updated_at", "2015-07-06 14:35:12.990112"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/submissions/2" for ::1 at 2015-07-06 10:35:12 -0400
+Processing by SubmissionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSubmission Load (0.3ms)[0m  SELECT  "submissions".* FROM "submissions" WHERE "submissions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered submissions/show.html.erb within layouts/application (1.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 115ms (Views: 114.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-07-06 10:35:14 -0400
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "submissions" WHERE "submissions"."survey_id" = $1[0m  [["survey_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (5.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 204ms (Views: 203.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/surveys/1/owner_display" for ::1 at 2015-07-06 10:35:15 -0400
+Processing by SurveysController#owner_display as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSurvey Load (0.4ms)[0m  [1mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 1]]
+  [1m[35mPossibleAnswer Load (0.2ms)[0m  SELECT "possible_answers".* FROM "possible_answers" WHERE "possible_answers"."question_id" = $1  [["question_id", 1]]
+  [1m[36mPossibleAnswer Load (0.1ms)[0m  [1mSELECT "possible_answers".* FROM "possible_answers" WHERE "possible_answers"."question_id" = $1[0m  [["question_id", 2]]
+  [1m[35mPossibleAnswer Load (0.1ms)[0m  SELECT "possible_answers".* FROM "possible_answers" WHERE "possible_answers"."question_id" = $1  [["question_id", 3]]
+  Rendered surveys/owner_display.html.erb within layouts/application (6.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 136ms (Views: 132.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2015-07-06 10:35:23 -0400
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSurvey Load (0.2ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "submissions" WHERE "submissions"."survey_id" = $1[0m  [["survey_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 204ms (Views: 202.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2015-07-06 10:35:38 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSurvey Load (0.2ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "submissions" WHERE "submissions"."survey_id" = $1  [["survey_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 116ms (Views: 115.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-07-06 10:43:15 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "submissions" WHERE "submissions"."survey_id" = $1[0m  [["survey_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (125.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 537ms (Views: 453.9ms | ActiveRecord: 6.5ms)
+
+
+Started DELETE "/logout" for ::1 at 2015-07-06 10:43:17 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rui0y3YL59hb4StF46gFm5nujtxDuWrSynET+anxhtNEv2dlBqrUG2AiW0Gd5et6nLSaq4sCw61WeOTCuEfxRg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-06 10:43:17 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 125ms (Views: 124.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-07-06 10:46:05 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (84.9ms)
+Completed 200 OK in 206ms (Views: 205.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-07-06 10:53:41 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Du0bYWGQWTw2IZ5Cx4Pdu1x5rJTLtS6MnjUMfmkQpDzkusjPETFq/w3i7ka5zjNaWSO44wMOh/MCPPtFeKbTqQ==", "user"=>{"username"=>"John", "password"=>"[FILTERED]"}, "commit"=>"Sign-Up"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "John"], ["password_digest", "$2a$10$bBOfj18XbiSUCpRZvPX9tOMz7Etk.CxaFXg6KrDznQjT7VtfLPjDS"], ["created_at", "2015-07-06 14:53:41.163844"], ["updated_at", "2015-07-06 14:53:41.163844"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 81ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2015-07-06 10:53:41 -0400
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 2]]
+  Rendered pages/home.html.erb within layouts/application (2.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 203ms (Views: 202.5ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/logout" for ::1 at 2015-07-06 10:54:41 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7hI88w/QfHa3AW2xjiBr1JNdIs77h3Aj5SEOsZRNFzEERe9df3FPtYzCHbXwbYU1lgc2uTM82Vx5KPmKhftgpA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-06 10:54:41 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 135ms (Views: 134.5ms | ActiveRecord: 0.0ms)

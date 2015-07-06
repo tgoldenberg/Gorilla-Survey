@@ -24,6 +24,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'web-console', '~> 2.0'
   gem 'capybara'
+  gem 'launchy'
   gem 'spring'
   gem 'better_errors'
 end
