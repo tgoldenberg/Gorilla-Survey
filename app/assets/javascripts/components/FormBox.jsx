@@ -53,11 +53,11 @@ var FormBox = React.createClass({
         <form action="/surveys" method="post" className="form-horizontal">
           <div className="form-group">
             <p className="form-label">Title: </p>
-            <input type="text" onChange={this.changeTitle} value={this.state.title} className="form-control input-field" name="title"/><br/>
+            <input type="text" onChange={this.changeTitle} value={this.state.title} id="title_field" className="form-control input-field" name="title"/><br/>
           </div>
           {renderedQuestions}
           <QuestionForm addQuestion={this.pushQuestion} />
-          <button className="btn btn-success btn-lg hidden" onClick={this.submitSurvey}>Create Survey</button>
+          <button className="btn btn-success btn-lg hidden" id="survey_submit" onClick={this.submitSurvey}>Create Survey</button>
         </form>
       </div>
     );

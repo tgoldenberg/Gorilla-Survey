@@ -3326,3 +3326,1516 @@ Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.5ms)
   [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Moike"], ["password_digest", "$2a$04$evG3VU/Hi68vqJqK9V.n6eda437KTLCGbzS0MAMo09hG40eqEwLTO"], ["created_at", "2015-07-06 16:06:33.876263"], ["updated_at", "2015-07-06 16:06:33.876263"]]
   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$7exF97Z0hCzs7FRq..9UzeA/FMOsRRarNtZiehB3m/Oxz51U3ayKu"], ["created_at", "2015-07-06 16:26:53.255540"], ["updated_at", "2015-07-06 16:26:53.255540"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 110]]
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 65ms (Views: 28.9ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:26:57 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 342ms (Views: 310.3ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:26:58 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:26:58 -0400
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:26:58 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:26:58 -0400
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:26:58 -0400
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Mike"], ["password_digest", "$2a$04$Q/NaehavTzGq90Ltccw4c.mMKCeFLIuVOsrd6r04CV0Q/Ycf3E4eG"], ["created_at", "2015-07-06 16:26:59.067741"], ["updated_at", "2015-07-06 16:26:59.067741"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:26:59 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Mike", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Mike"]]
+Redirected to http://127.0.0.1:51249/login
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:26:59 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:26:59 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:26:59 -0400
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:27:01 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:27:01 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:27:01 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$QnQVkx9uQ/k5z1LYbWZY9eZGQkfL8KBXGCwm7EFT1W3AdSPEM1R9e"], ["created_at", "2015-07-06 16:27:01.791057"], ["updated_at", "2015-07-06 16:27:01.791057"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:27:01 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Tom", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Tom"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:27:01 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 112]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 112]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 112]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 112]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 112]]
+  [1m[35mSurvey Load (0.4ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 112]]
+  Rendered pages/home.html.erb within layouts/application (39.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 112]]
+Completed 200 OK in 44ms (Views: 40.7ms | ActiveRecord: 1.8ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:27:01 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:27:01 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:27:01 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2015-07-06 12:27:01 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"John", "password"=>"[FILTERED]"}, "commit"=>"Sign-Up"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "John"], ["password_digest", "$2a$04$l9e7oTDlRzDNwx3yEjqbcOf.Fn0CZ0V3NmswbOf8oWPtIeEOgECpy"], ["created_at", "2015-07-06 16:27:01.899009"], ["updated_at", "2015-07-06 16:27:01.899009"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:27:01 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 113]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 113]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 113]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 113]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 113]]
+  [1m[35mSurvey Load (0.2ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 113]]
+  Rendered pages/home.html.erb within layouts/application (1.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 113]]
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Moikey"], ["password_digest", "$2a$04$c9FsFc7ceKpmgtpaRbOGq.5cTEPKdUC2le.IYyrN1rnnBBq8VrHda"], ["created_at", "2015-07-06 16:27:01.914260"], ["updated_at", "2015-07-06 16:27:01.914260"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "surveys" ("user_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 114], ["title", "Whatever"], ["created_at", "2015-07-06 16:27:01.924762"], ["updated_at", "2015-07-06 16:27:01.924762"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 114]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Moike"], ["password_digest", "$2a$04$o6kZl5R2gMJQ/uQjSgvRouAcaRxjk7XW/jpz13XTiT.kDtlHSO9fe"], ["created_at", "2015-07-06 16:27:02.092971"], ["updated_at", "2015-07-06 16:27:02.092971"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$ugyvJuzQhpwZKN/X8Wp5peX0RMravVGvALnh2zBFUID2XP.q/qppa"], ["created_at", "2015-07-06 16:28:06.631667"], ["updated_at", "2015-07-06 16:28:06.631667"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 116]]
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 15ms (Views: 8.3ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:28:09 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 127ms (Views: 115.0ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:28:10 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:28:10 -0400
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:28:10 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 12ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:28:10 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:28:10 -0400
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Mike"], ["password_digest", "$2a$04$oRPfUq6Pb3fp3P/gWsBbgumBNsnhmvh7yZg4A6ogsXYE53mrAl7ue"], ["created_at", "2015-07-06 16:28:10.654536"], ["updated_at", "2015-07-06 16:28:10.654536"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:28:10 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Mike", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Mike"]]
+Redirected to http://127.0.0.1:51354/login
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:28:10 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:28:10 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:28:10 -0400
+Started GET "/surveys/new" for 127.0.0.1 at 2015-07-06 12:28:11 -0400
+Processing by SurveysController#new as HTML
+  Rendered surveys/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 32ms (Views: 3.3ms | ActiveRecord: 7.0ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:28:11 -0400
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:28:11 -0400
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:28:11 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:28:11 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:28:11 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$pHshXD/6Fv3tTmNVnR19aOSIHGY6LKXmT6CnXid9n4h8nTVi5TbwC"], ["created_at", "2015-07-06 16:28:11.554176"], ["updated_at", "2015-07-06 16:28:11.554176"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:28:11 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Tom", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Tom"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:28:11 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 118]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 118]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 118]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 118]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 118]]
+  [1m[35mSurvey Load (0.4ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 118]]
+  Rendered pages/home.html.erb within layouts/application (98.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 118]]
+Completed 200 OK in 103ms (Views: 99.9ms | ActiveRecord: 1.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:28:11 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:28:11 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:28:11 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2015-07-06 12:28:11 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"John", "password"=>"[FILTERED]"}, "commit"=>"Sign-Up"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "John"], ["password_digest", "$2a$04$lA48cua3JKW0uI2cQPlDVelRNTeXBUa01hoMBMbcu7tsx1zVVVPv."], ["created_at", "2015-07-06 16:28:11.703075"], ["updated_at", "2015-07-06 16:28:11.703075"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:28:11 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 119]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 119]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 119]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 119]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 119]]
+  [1m[35mSurvey Load (0.4ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 119]]
+  Rendered pages/home.html.erb within layouts/application (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 119]]
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Moikey"], ["password_digest", "$2a$04$8RiYUQFip52sA9FNHNEXcOcwpurZA75mYkPmXn8TFJ/DBdnRwtIi6"], ["created_at", "2015-07-06 16:28:11.717944"], ["updated_at", "2015-07-06 16:28:11.717944"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "surveys" ("user_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 120], ["title", "Whatever"], ["created_at", "2015-07-06 16:28:11.720351"], ["updated_at", "2015-07-06 16:28:11.720351"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 120]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Moike"], ["password_digest", "$2a$04$EGskoVOS5Zs9Qd3khpa3GeLXnFHNbSXlNmYJ..fS/iuFJ2Z/VBGYy"], ["created_at", "2015-07-06 16:28:11.745394"], ["updated_at", "2015-07-06 16:28:11.745394"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$FjTTT1abVyqKypie6Cduj.UQmFQb6sNrvaM8ZrT/LRk.5KFJUJDXC"], ["created_at", "2015-07-06 16:28:34.190015"], ["updated_at", "2015-07-06 16:28:34.190015"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 122]]
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 7.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:28:37 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 131ms (Views: 118.7ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:28:37 -0400
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:28:37 -0400
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:28:38 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 12ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:28:38 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:28:38 -0400
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Mike"], ["password_digest", "$2a$04$t2Di3zEv0xd9zmXM/orxqO9k9u/NT3f3wYRlgcdVxkW6JXu.IlNiW"], ["created_at", "2015-07-06 16:28:38.236355"], ["updated_at", "2015-07-06 16:28:38.236355"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:28:38 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Mike", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Mike"]]
+Redirected to http://127.0.0.1:51402/login
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:28:38 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:28:38 -0400
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:28:38 -0400
+Started GET "/surveys/new" for 127.0.0.1 at 2015-07-06 12:28:38 -0400
+Processing by SurveysController#new as HTML
+  Rendered surveys/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 34ms (Views: 3.7ms | ActiveRecord: 7.1ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:28:38 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:28:38 -0400
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:28:39 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:28:39 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:28:39 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.7ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$kkLL1iScKyvSZ5OHsgPqA.z5hDwfbK.093xtfEHhejkCqB36Hmg4a"], ["created_at", "2015-07-06 16:28:39.217564"], ["updated_at", "2015-07-06 16:28:39.217564"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:28:39 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Tom", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Tom"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:28:39 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 124]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 124]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 124]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 124]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 124]]
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 124]]
+  Rendered pages/home.html.erb within layouts/application (18.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 124]]
+Completed 200 OK in 22ms (Views: 19.2ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:28:39 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:28:39 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:28:39 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2015-07-06 12:28:39 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"John", "password"=>"[FILTERED]"}, "commit"=>"Sign-Up"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "John"], ["password_digest", "$2a$04$RYjpIJEhzVRRThvXunCJVu7NdN49NVwaKzRUAqfm/HW.ZU.nYAVbS"], ["created_at", "2015-07-06 16:28:39.400579"], ["updated_at", "2015-07-06 16:28:39.400579"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:28:39 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 125]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 125]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 125]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 125]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 125]]
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 125]]
+  Rendered pages/home.html.erb within layouts/application (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 125]]
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Moikey"], ["password_digest", "$2a$04$sXSvyDOipwQFUr/lSXFJk.nt1tjL0wjFoLwSCToVU8fiXoZ7SPeTi"], ["created_at", "2015-07-06 16:28:39.417311"], ["updated_at", "2015-07-06 16:28:39.417311"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "surveys" ("user_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 126], ["title", "Whatever"], ["created_at", "2015-07-06 16:28:39.419685"], ["updated_at", "2015-07-06 16:28:39.419685"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 126]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Moike"], ["password_digest", "$2a$04$YTbXOYJImH6l5Mb6MACuFeCSMBasrpkQ84Si7EHujAkNCbCxj8pM2"], ["created_at", "2015-07-06 16:28:39.445043"], ["updated_at", "2015-07-06 16:28:39.445043"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$i7AGec3i9XsVYUvr7CILfuqxmLpKs0/47Pod7LmrvkIuI2nO3V1dW"], ["created_at", "2015-07-06 16:33:01.613659"], ["updated_at", "2015-07-06 16:33:01.613659"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 128]]
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 15ms (Views: 8.9ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:33:04 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 195ms (Views: 184.1ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:33:05 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:33:05 -0400
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:33:05 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:33:05 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:33:05 -0400
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Mike"], ["password_digest", "$2a$04$s.LzztUFcuE/mmEB06pspOjcVegyuM.vaCtEGjAn9dAtWLRDo96n6"], ["created_at", "2015-07-06 16:33:05.810785"], ["updated_at", "2015-07-06 16:33:05.810785"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:33:06 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Mike", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Mike"]]
+Redirected to http://127.0.0.1:51511/login
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:33:06 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:33:06 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:33:06 -0400
+Started GET "/surveys/new" for 127.0.0.1 at 2015-07-06 12:33:06 -0400
+Processing by SurveysController#new as HTML
+  Rendered surveys/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 35ms (Views: 4.9ms | ActiveRecord: 6.8ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:33:06 -0400
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:33:06 -0400
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:33:08 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:33:08 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:33:08 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$7r9V42L4usyn2p/32eEMWeFmWOucuvXXenLsKh3C3oPAy2h8lsEme"], ["created_at", "2015-07-06 16:33:08.762809"], ["updated_at", "2015-07-06 16:33:08.762809"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:33:08 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Tom", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Tom"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:33:08 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 130]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 130]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 130]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 130]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 130]]
+  [1m[35mSurvey Load (0.4ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 130]]
+  Rendered pages/home.html.erb within layouts/application (16.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 130]]
+Completed 200 OK in 20ms (Views: 17.0ms | ActiveRecord: 1.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:33:08 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:33:08 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:33:08 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2015-07-06 12:33:08 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"John", "password"=>"[FILTERED]"}, "commit"=>"Sign-Up"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "John"], ["password_digest", "$2a$04$ztJeau8lH1RvcGe73mBwmOFBD8YRoAm5WjIlfIOJFYTYfbOkSt046"], ["created_at", "2015-07-06 16:33:08.829970"], ["updated_at", "2015-07-06 16:33:08.829970"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:33:08 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 131]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 131]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 131]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 131]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 131]]
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 131]]
+  Rendered pages/home.html.erb within layouts/application (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 131]]
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Moikey"], ["password_digest", "$2a$04$WT1CwMJMaADF3k1x5WtjYe.gITjPo61rh0cGAKr3p87ryZveBeJEG"], ["created_at", "2015-07-06 16:33:08.846540"], ["updated_at", "2015-07-06 16:33:08.846540"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "surveys" ("user_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 132], ["title", "Whatever"], ["created_at", "2015-07-06 16:33:08.848992"], ["updated_at", "2015-07-06 16:33:08.848992"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 132]]
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Moike"], ["password_digest", "$2a$04$y8MswgNYYIkNJR3rqVPrd.jbMpU.Bm/VCOFjghV6u1K/es4bH7ibK"], ["created_at", "2015-07-06 16:33:08.950348"], ["updated_at", "2015-07-06 16:33:08.950348"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$/yC782DZM9R1E7MbR0VytOIjZKBekN7iKJy2EZZVZJs.rMhDLTxZO"], ["created_at", "2015-07-06 16:33:54.605830"], ["updated_at", "2015-07-06 16:33:54.605830"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 134]]
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 15ms (Views: 6.8ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:33:57 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 127ms (Views: 114.4ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:33:58 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:33:58 -0400
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:33:58 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:33:58 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:33:58 -0400
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Mike"], ["password_digest", "$2a$04$b07T7HeKdf5f16GThfHE3euyMgw6i.0cmXAjow0T5e7WoI31GwEYa"], ["created_at", "2015-07-06 16:33:58.663641"], ["updated_at", "2015-07-06 16:33:58.663641"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:33:58 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Mike", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Mike"]]
+Redirected to http://127.0.0.1:51652/login
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:33:58 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:33:58 -0400
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:33:58 -0400
+Started GET "/surveys/new" for 127.0.0.1 at 2015-07-06 12:33:59 -0400
+Processing by SurveysController#new as HTML
+  Rendered surveys/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 33ms (Views: 3.1ms | ActiveRecord: 7.3ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:33:59 -0400
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:33:59 -0400
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:34:01 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:34:01 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:34:01 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$P5NPi5K1j2WtUsg1hL5jMeK8toMgPTdU2yPFdmA369oo6/03CATQy"], ["created_at", "2015-07-06 16:34:01.975262"], ["updated_at", "2015-07-06 16:34:01.975262"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:34:01 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Tom", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Tom"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:34:01 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 136]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 136]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 136]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 136]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 136]]
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 136]]
+  Rendered pages/home.html.erb within layouts/application (14.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 136]]
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:34:02 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:34:02 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:34:02 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2015-07-06 12:34:02 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"John", "password"=>"[FILTERED]"}, "commit"=>"Sign-Up"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "John"], ["password_digest", "$2a$04$vcvEB6wV/gqeDncm33USUetAPgNACfLkHlnIth7nO2PMkdglI.0Ii"], ["created_at", "2015-07-06 16:34:02.044052"], ["updated_at", "2015-07-06 16:34:02.044052"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:34:02 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 137]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 137]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 137]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 137]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 137]]
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 137]]
+  Rendered pages/home.html.erb within layouts/application (2.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 137]]
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Moikey"], ["password_digest", "$2a$04$Qak.m9PKA397Ba/eqjOAXuqBBZEUXhNfGdRl.cvaU8qy5blf2jiOm"], ["created_at", "2015-07-06 16:34:02.061323"], ["updated_at", "2015-07-06 16:34:02.061323"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "surveys" ("user_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 138], ["title", "Whatever"], ["created_at", "2015-07-06 16:34:02.063864"], ["updated_at", "2015-07-06 16:34:02.063864"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 138]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Moike"], ["password_digest", "$2a$04$mb0geFuDufHLzaReKeWnU.eVEM0X8zWX1mnDI2aEg95psGQHk9yZu"], ["created_at", "2015-07-06 16:34:02.090159"], ["updated_at", "2015-07-06 16:34:02.090159"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$Zyt8NSBi586x..DSmcWkC.sAVNE8h3fS1MGzKT2ZwkynZq9uPjq5a"], ["created_at", "2015-07-06 16:37:02.735847"], ["updated_at", "2015-07-06 16:37:02.735847"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 140]]
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 85ms (Views: 78.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:37:06 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 568ms (Views: 556.7ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:37:06 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:37:06 -0400
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:37:07 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:37:07 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:37:07 -0400
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Mike"], ["password_digest", "$2a$04$kZlBajRC78diAK2ClERBWOLsmVdHTOHuIBvEvZPysCX6pFJHHVY8C"], ["created_at", "2015-07-06 16:37:07.336188"], ["updated_at", "2015-07-06 16:37:07.336188"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:37:07 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Mike", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Mike"]]
+Redirected to http://127.0.0.1:51760/login
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:37:07 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:37:07 -0400
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:37:07 -0400
+Started GET "/surveys/new" for 127.0.0.1 at 2015-07-06 12:37:07 -0400
+Processing by SurveysController#new as HTML
+  Rendered surveys/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 34ms (Views: 4.0ms | ActiveRecord: 6.1ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:37:07 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:37:07 -0400
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:37:10 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:37:10 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:37:10 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$StQ4WE77Ya8NcuRcmUTw6.r1ROKrGObPN7WABXRVw0N9Su15FrGRi"], ["created_at", "2015-07-06 16:37:10.291546"], ["updated_at", "2015-07-06 16:37:10.291546"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:37:10 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Tom", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Tom"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:37:10 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 142]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 142]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 142]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 142]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 142]]
+  [1m[35mSurvey Load (0.4ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 142]]
+  Rendered pages/home.html.erb within layouts/application (89.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 142]]
+Completed 200 OK in 94ms (Views: 90.8ms | ActiveRecord: 2.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:37:10 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:37:10 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:37:10 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2015-07-06 12:37:10 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"John", "password"=>"[FILTERED]"}, "commit"=>"Sign-Up"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "John"], ["password_digest", "$2a$04$4XuPvJT9xt5RM4yulR0ED.34Aw7nBNYHyzc8.Q//ZQzU5CUVlWOBS"], ["created_at", "2015-07-06 16:37:10.432432"], ["updated_at", "2015-07-06 16:37:10.432432"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:37:10 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 143]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 143]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 143]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 143]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 143]]
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 143]]
+  Rendered pages/home.html.erb within layouts/application (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 143]]
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Moikey"], ["password_digest", "$2a$04$7J8gE598HxK8byUhVtzEG.soZiA.FoQey6OXgpL36esS2hgjQBS02"], ["created_at", "2015-07-06 16:37:10.449226"], ["updated_at", "2015-07-06 16:37:10.449226"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "surveys" ("user_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 144], ["title", "Whatever"], ["created_at", "2015-07-06 16:37:10.451625"], ["updated_at", "2015-07-06 16:37:10.451625"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 144]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Moike"], ["password_digest", "$2a$04$NB158Atrq9cMssEh74Zeg.40A1m4aL4ql4F17WUEr36GkIIfdNgee"], ["created_at", "2015-07-06 16:37:10.473782"], ["updated_at", "2015-07-06 16:37:10.473782"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$Ef/z4Xtbi4y58m5sbN/4gueZsHRbw57hP2QX12TVyWluofg/Ck0Em"], ["created_at", "2015-07-06 16:39:59.199289"], ["updated_at", "2015-07-06 16:39:59.199289"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 146]]
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 6.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:40:02 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 139ms (Views: 127.0ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:40:03 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:40:03 -0400
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:40:03 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:40:03 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:40:03 -0400
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Mike"], ["password_digest", "$2a$04$TnzcdM4HCGhFAyyFlfbsy.q6lie6SI4KfZidQbz7mj2nRAlJBJHr2"], ["created_at", "2015-07-06 16:40:03.623508"], ["updated_at", "2015-07-06 16:40:03.623508"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:40:03 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Mike", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Mike"]]
+Redirected to http://127.0.0.1:51891/login
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:40:03 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:40:03 -0400
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:40:03 -0400
+Started GET "/surveys/new" for 127.0.0.1 at 2015-07-06 12:40:04 -0400
+Processing by SurveysController#new as HTML
+  Rendered surveys/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 32ms (Views: 3.2ms | ActiveRecord: 6.5ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:40:04 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:40:04 -0400
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:40:06 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:40:06 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:40:06 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$oNVvZIMtpwHxKUUNV/T/a.xcz.0z.jgYZ.hT7oyLyR.rs96AngU/e"], ["created_at", "2015-07-06 16:40:06.569389"], ["updated_at", "2015-07-06 16:40:06.569389"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:40:06 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Tom", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Tom"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:40:06 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 148]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 148]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 148]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 148]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 148]]
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 148]]
+  Rendered pages/home.html.erb within layouts/application (15.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 148]]
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 1.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:40:06 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:40:06 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:40:06 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2015-07-06 12:40:06 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"John", "password"=>"[FILTERED]"}, "commit"=>"Sign-Up"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "John"], ["password_digest", "$2a$04$TsKqgGinWkah.48dPUGzcecPB0tdpQ1X72vL3MPL4ROnzI5Rf4paK"], ["created_at", "2015-07-06 16:40:06.634120"], ["updated_at", "2015-07-06 16:40:06.634120"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:40:06 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 149]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 149]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 149]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 149]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 149]]
+  [1m[35mSurvey Load (0.4ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 149]]
+  Rendered pages/home.html.erb within layouts/application (2.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 149]]
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Moikey"], ["password_digest", "$2a$04$wnl7F5hULyztGiTXKwqeWermaPpOoeA9xqJ88dhbezXzZi02ZLuDC"], ["created_at", "2015-07-06 16:40:06.652268"], ["updated_at", "2015-07-06 16:40:06.652268"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "surveys" ("user_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 150], ["title", "Whatever"], ["created_at", "2015-07-06 16:40:06.654878"], ["updated_at", "2015-07-06 16:40:06.654878"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 150]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Moike"], ["password_digest", "$2a$04$YU/8B21m/ZPr//m82pYnXOaqOKD6ycHM6u3abFRutM.xVVDTGqHtm"], ["created_at", "2015-07-06 16:40:06.678460"], ["updated_at", "2015-07-06 16:40:06.678460"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$W8zdHpKud8mTMzUVyLU3i.hOdWb5m.Chh1EoKrq4MIooLMM3Nxo6G"], ["created_at", "2015-07-06 16:40:29.087371"], ["updated_at", "2015-07-06 16:40:29.087371"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 152]]
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:40:32 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 128ms (Views: 117.0ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:40:32 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:40:32 -0400
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:40:32 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 13ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:40:32 -0400
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:40:32 -0400
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Mike"], ["password_digest", "$2a$04$dsS/qzxdAq6BAFDoX81/nuyJz2sexxjPhB0aTTZylQ7cMpKwg7yMG"], ["created_at", "2015-07-06 16:40:33.142444"], ["updated_at", "2015-07-06 16:40:33.142444"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:40:33 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Mike", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Mike"]]
+Redirected to http://127.0.0.1:51995/login
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:40:33 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:40:33 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:40:33 -0400
+Started GET "/surveys/new" for 127.0.0.1 at 2015-07-06 12:40:33 -0400
+Processing by SurveysController#new as HTML
+  Rendered surveys/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 35ms (Views: 3.4ms | ActiveRecord: 8.1ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:40:33 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:40:33 -0400
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:40:36 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:40:36 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:40:36 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$EtAerAmlUahK91Ly1/2J9udGy0RCxzfZb9jlbCNIrEi171Z9PdQna"], ["created_at", "2015-07-06 16:40:36.143593"], ["updated_at", "2015-07-06 16:40:36.143593"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:40:36 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Tom", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Tom"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:40:36 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 154]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 154]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 154]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 154]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 154]]
+  [1m[35mSurvey Load (0.4ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 154]]
+  Rendered pages/home.html.erb within layouts/application (16.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 154]]
+Completed 200 OK in 20ms (Views: 17.3ms | ActiveRecord: 1.8ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:40:36 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:40:36 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:40:36 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2015-07-06 12:40:36 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"John", "password"=>"[FILTERED]"}, "commit"=>"Sign-Up"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "John"], ["password_digest", "$2a$04$05P0HTiNKTe7vzHeA2a/9u8b2Bry2ylG6KGT1gmTEet8LSO8ajNPK"], ["created_at", "2015-07-06 16:40:36.213524"], ["updated_at", "2015-07-06 16:40:36.213524"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:40:36 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 155]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 155]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 155]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 155]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 155]]
+  [1m[35mSurvey Load (0.2ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 155]]
+  Rendered pages/home.html.erb within layouts/application (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 155]]
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Moikey"], ["password_digest", "$2a$04$cvo63aXP1vhOClbU4ucW2OiwLE5YJtaZUO1Hg0mIVfRBVMR5yEoh2"], ["created_at", "2015-07-06 16:40:36.233352"], ["updated_at", "2015-07-06 16:40:36.233352"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "surveys" ("user_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 156], ["title", "Whatever"], ["created_at", "2015-07-06 16:40:36.235761"], ["updated_at", "2015-07-06 16:40:36.235761"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 156]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Moike"], ["password_digest", "$2a$04$MGzkJXyALqjJnrESRrF2iesx0zPNXFUTz/hNghE834LJH2H6zWlLa"], ["created_at", "2015-07-06 16:40:36.261134"], ["updated_at", "2015-07-06 16:40:36.261134"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$I1E9QUD5UWqFfG.rs1yAWuAG.3YRj7wGhoRLNq6bkVwHnc226A5Pu"], ["created_at", "2015-07-06 16:41:10.832694"], ["updated_at", "2015-07-06 16:41:10.832694"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 158]]
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 15ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:41:14 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 126ms (Views: 115.2ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:41:14 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:41:14 -0400
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:41:14 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:41:14 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:41:14 -0400
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Mike"], ["password_digest", "$2a$04$NaxAxeXu9HsByZoOMh1B4eunaGKlCEQGjDdPPs.7xQO740RToUvz."], ["created_at", "2015-07-06 16:41:14.837066"], ["updated_at", "2015-07-06 16:41:14.837066"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:41:15 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Mike", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Mike"]]
+Redirected to http://127.0.0.1:52097/login
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:41:15 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:41:15 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:41:15 -0400
+Started GET "/surveys/new" for 127.0.0.1 at 2015-07-06 12:41:15 -0400
+Processing by SurveysController#new as HTML
+  Rendered surveys/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 3.2ms | ActiveRecord: 7.3ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:41:15 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:41:15 -0400
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:41:17 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:41:17 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:41:18 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$KhO6jhufqbfrdVbVKh9D3utEfv8lkah0ujLxMopnRi74VJ8FbqxCq"], ["created_at", "2015-07-06 16:41:18.006528"], ["updated_at", "2015-07-06 16:41:18.006528"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:41:18 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Tom", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Tom"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:41:18 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 160]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 160]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 160]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 160]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 160]]
+  [1m[35mSurvey Load (0.4ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 160]]
+  Rendered pages/home.html.erb within layouts/application (16.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 160]]
+Completed 200 OK in 21ms (Views: 17.9ms | ActiveRecord: 1.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:41:18 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:41:18 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:41:18 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2015-07-06 12:41:18 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"John", "password"=>"[FILTERED]"}, "commit"=>"Sign-Up"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "John"], ["password_digest", "$2a$04$ZutZM1dxAX7HnpNV91NLvuOJQMn/yUocEVxLNjU7ta0Dis8ZAlssO"], ["created_at", "2015-07-06 16:41:18.084672"], ["updated_at", "2015-07-06 16:41:18.084672"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 1.2ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:41:18 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 161]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 161]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 161]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 161]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 161]]
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 161]]
+  Rendered pages/home.html.erb within layouts/application (3.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 161]]
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Moikey"], ["password_digest", "$2a$04$9yD7YemTG6VDg2iMMy.z.OTVTymhOT9WfZlF0vUsJVrvEhoLNbZL2"], ["created_at", "2015-07-06 16:41:18.107641"], ["updated_at", "2015-07-06 16:41:18.107641"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "surveys" ("user_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 162], ["title", "Whatever"], ["created_at", "2015-07-06 16:41:18.110268"], ["updated_at", "2015-07-06 16:41:18.110268"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 162]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Moike"], ["password_digest", "$2a$04$F6xyO.w2XctTdJ2fBRa8.uJ.fGx.4oywDp2YWsqDfeAaXLo.WLIYy"], ["created_at", "2015-07-06 16:41:18.134937"], ["updated_at", "2015-07-06 16:41:18.134937"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$OJ0cPYGfIRYb6yCb3UlFz.vFf2JAhjP/lA8WKG5xnj0vV5u.P8RoC"], ["created_at", "2015-07-06 16:42:53.218425"], ["updated_at", "2015-07-06 16:42:53.218425"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 164]]
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 83ms (Views: 76.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:42:56 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 502ms (Views: 490.6ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:42:57 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:42:57 -0400
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:42:57 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:42:57 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:42:57 -0400
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Mike"], ["password_digest", "$2a$04$twphHPmuB6zJVTWOhIR3GOE9KtJ.C.itT.vt9QV8tujFDDAy6Fu8C"], ["created_at", "2015-07-06 16:42:57.622248"], ["updated_at", "2015-07-06 16:42:57.622248"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:42:57 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Mike", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Mike"]]
+Redirected to http://127.0.0.1:52199/login
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:42:57 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:42:57 -0400
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:42:57 -0400
+Started GET "/surveys/new" for 127.0.0.1 at 2015-07-06 12:42:58 -0400
+Processing by SurveysController#new as HTML
+  Rendered surveys/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 33ms (Views: 3.8ms | ActiveRecord: 7.5ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:42:58 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:42:58 -0400
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:43:01 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:43:01 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:43:01 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$4OOMgFgUQqVl/kJ6pQn5YOdfC1cJr1XrTCg5s0h/gR2IkAv/A9M8y"], ["created_at", "2015-07-06 16:43:01.069796"], ["updated_at", "2015-07-06 16:43:01.069796"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:43:01 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Tom", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Tom"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:43:01 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 166]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 166]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 166]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 166]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 166]]
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 166]]
+  Rendered pages/home.html.erb within layouts/application (14.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 166]]
+Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:43:01 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:43:01 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:43:01 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2015-07-06 12:43:01 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"John", "password"=>"[FILTERED]"}, "commit"=>"Sign-Up"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "John"], ["password_digest", "$2a$04$fFE3Ef65GEvrNQ5lRxABXOzr7VJQEizG6tS8febiL1IpMiideV1tS"], ["created_at", "2015-07-06 16:43:01.216749"], ["updated_at", "2015-07-06 16:43:01.216749"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:43:01 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 167]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 167]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 167]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 167]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 167]]
+  [1m[35mSurvey Load (0.2ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 167]]
+  Rendered pages/home.html.erb within layouts/application (1.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 167]]
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Moikey"], ["password_digest", "$2a$04$Qpxom630lgGqu823Q7gq1OxpuYzVJSde9QyLZ7nVY06EtgnhHEH.."], ["created_at", "2015-07-06 16:43:01.233524"], ["updated_at", "2015-07-06 16:43:01.233524"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "surveys" ("user_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 168], ["title", "Whatever"], ["created_at", "2015-07-06 16:43:01.236040"], ["updated_at", "2015-07-06 16:43:01.236040"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 168]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Moike"], ["password_digest", "$2a$04$lKScgtcsQ7V3uUataROqS..FuQf8RHZhLtuE5o7CQXKOThqD9QOLG"], ["created_at", "2015-07-06 16:43:01.260347"], ["updated_at", "2015-07-06 16:43:01.260347"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$ReiYxwuo2QTxXknB6kry0eflRC0HrVEVY1ueFXQYNjeaCwNFiePEm"], ["created_at", "2015-07-06 16:45:03.169273"], ["updated_at", "2015-07-06 16:45:03.169273"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 170]]
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 81ms (Views: 74.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:45:06 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 460ms (Views: 451.5ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:45:07 -0400
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:45:07 -0400
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:45:07 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:45:07 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:45:07 -0400
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Mike"], ["password_digest", "$2a$04$X1vvits3yGXvf1Jqpc1l9u/1/wu8Q2G14eqGPuyqmsZM21RxS/9Nu"], ["created_at", "2015-07-06 16:45:07.965498"], ["updated_at", "2015-07-06 16:45:07.965498"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:45:08 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Mike", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Mike"]]
+Redirected to http://127.0.0.1:52382/login
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:45:08 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:45:08 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:45:08 -0400
+Started GET "/surveys/new" for 127.0.0.1 at 2015-07-06 12:45:08 -0400
+Processing by SurveysController#new as HTML
+  Rendered surveys/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 35ms (Views: 3.6ms | ActiveRecord: 7.7ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2015-07-06 12:45:08 -0400
+Started GET "/assets/application.css" for 127.0.0.1 at 2015-07-06 12:45:08 -0400
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:45:11 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:45:11 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/login" for 127.0.0.1 at 2015-07-06 12:45:11 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Tom"], ["password_digest", "$2a$04$tQQXkeIFjRv/wMHSAwqILeTfvAHQUSgUxwcpkn4YKVrXRioJv3jeS"], ["created_at", "2015-07-06 16:45:11.362207"], ["updated_at", "2015-07-06 16:45:11.362207"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-07-06 12:45:11 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"Tom", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Tom"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:45:11 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 172]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 172]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 172]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 172]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 172]]
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 172]]
+  Rendered pages/home.html.erb within layouts/application (13.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 172]]
+Completed 200 OK in 18ms (Views: 14.9ms | ActiveRecord: 1.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:45:11 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:45:11 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2015-07-06 12:45:11 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2015-07-06 12:45:11 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"John", "password"=>"[FILTERED]"}, "commit"=>"Sign-Up"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "John"], ["password_digest", "$2a$04$VmpeBfi6R.JrCKGeeAIfiunwvqiFmVitaVmOjQMssP7F9K3ew09d6"], ["created_at", "2015-07-06 16:45:11.427917"], ["updated_at", "2015-07-06 16:45:11.427917"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2015-07-06 12:45:11 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 173]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 173]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 173]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 173]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 173]]
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."user_id" = $1  [["user_id", 173]]
+  Rendered pages/home.html.erb within layouts/application (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 173]]
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Moikey"], ["password_digest", "$2a$04$0mHiEU75ilyx4igEKEv2xu1ijWQbtzNK.8BnV1f1.hRbA7ph9ccDy"], ["created_at", "2015-07-06 16:45:11.443840"], ["updated_at", "2015-07-06 16:45:11.443840"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "surveys" ("user_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 174], ["title", "Whatever"], ["created_at", "2015-07-06 16:45:11.446870"], ["updated_at", "2015-07-06 16:45:11.446870"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 174]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "Moike"], ["password_digest", "$2a$04$MqmvM.RNA4hbwtUxiBIkDuCFvMC8OUdg.lLFRhsYoWaABUkklxfGa"], ["created_at", "2015-07-06 16:45:11.470915"], ["updated_at", "2015-07-06 16:45:11.470915"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK

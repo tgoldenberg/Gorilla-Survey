@@ -45,7 +45,7 @@ var QuestionForm = React.createClass({
           <p className="form-label">Your survey question: </p>
           <div className="form-group flex">
             <input type="text" id="question" name="question_prompt" onChange={this.handleChange} className="form-control input-field" value={this.state.question} />
-            <a href="#" onClick={this.handleClick}><span className="glyphicon glyphicon-plus"></span></a>
+            <a href="#" onClick={this.handleClick} id="add-question"><span className="glyphicon glyphicon-plus"></span></a>
           </div>
         </div>
         <div className="hidden-fields hidden">
