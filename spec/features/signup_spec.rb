@@ -13,7 +13,6 @@ describe "Signup" do
     fill_in('user_username', :with => 'John')
     fill_in('user_password', :with => 'password')
     click_button("Sign-Up")
-    save_and_open_page
     expect(page).to have_content("Hello John!")
   end
 end
