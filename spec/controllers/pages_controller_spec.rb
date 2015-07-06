@@ -1,12 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe PagesController, type: :controller do
-
-  describe "GET #home" do
-    it "returns http success" do
-      get :home
-      expect(response).to have_http_status(:success)
+describe PagesController do
+  describe "GET root" do
+    let(:user) { User.create(username: "Tom", password: "password") }
+    let(:survey) {Survey.create(user_id: user.id, title: "My Survey") }
+    it "shows the users surveys" do
+      session[:user_id] = user.id
+      get "home"
+      expect(assigns(:user)).to eq(user)
     end
   end
-
 end

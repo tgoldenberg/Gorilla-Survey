@@ -1,5 +1,20 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe User do
+  it "should not allow sign up without username" do
+    params = {username: nil, password: "password"}
+    user = User.create(params)
+    expect(user).not_to be_valid
+  end
+
+  it "should not allow sign up without password" do
+    params = {username: "Mike", password: nil}
+    user = User.create(params)
+    expect(user).not_to be_valid
+  end
+
+  it "should create only valid users" do
+    user = User.create(username: "Moike", password: "password")
+    expect(user).to be_valid
+  end
 end

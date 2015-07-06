@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MadGorillaz</title>
+  <link rel="stylesheet" media="all" href="/assets/application.css" />
+  <script src="/assets/application.js"></script>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+
+  <nav class="navbar navbar nav">
+    <a class="navbar-brand" href="/">Home</a>
+      <a class="navbar-brand" href="/login">Login</a>
+      <a class="navbar-brand" href="/signup">Signup</a>
+    <p class="notice"></p>
+  </nav>
+
+<div class="container" style="text-align: center;">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <h1> Please Log-In:</h1>
+      <form class="new_user" id="new_user" action="/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+      <input type="text" name="user[username]" id="user_username" /><br><br>
+      <input type="password" name="user[password]" id="user_password" /><br><br>
+      <input type="submit" name="commit" value="Login" class="btn btn-primary" />
+</form>  </div>
+  <div class="col-md-4"></div>
+</div>
+
+
+</body>
+</html>
